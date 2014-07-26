@@ -22,11 +22,10 @@ ActiveRecord::Schema.define(version: 20140725233818) do
 
   create_table "lands", force: true do |t|
     t.integer  "size"
-    t.integer  "homes"
-    t.integer  "agriculture"
-    t.integer  "mines"
-    t.integer  "industry"
-    t.integer  "barren"
+    t.integer  "homes",       default: 0
+    t.integer  "agriculture", default: 0
+    t.integer  "mines",       default: 0
+    t.integer  "industry",    default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

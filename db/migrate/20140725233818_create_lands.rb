@@ -3,11 +3,10 @@ class CreateLands < ActiveRecord::Migration
     create_table :lands do |t|
       t.integer :size
 
-      t.integer :homes
-      t.integer :agriculture
-      t.integer :mines
-      t.integer :industry
-      t.integer :barren
+      t.integer :homes, default: 0
+      t.integer :agriculture, default: 0
+      t.integer :mines, default: 0
+      t.integer :industry, default: 0
 
       t.timestamps
     end
