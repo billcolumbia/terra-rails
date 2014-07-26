@@ -1,10 +1,16 @@
 class City < ActiveRecord::Base
   has_one :land
-  after_create :create_land
+  has_one :resources
+  after_create :create_land, :create_resources
 
   # Access city's land easily
   def land
     Land.find(self.land_id)
+  end
+
+  # Access city's land easily
+  def resources
+    Resources.find(self.resources_id)
   end
 
   private
@@ -28,6 +34,23 @@ class City < ActiveRecord::Base
       )
 
       new_land.save
+    end
+
+    def create_resources
+      # Create new resources for the city
+      new_resources = Resources.create()
+
+      # Associate foreign key
+      self.resources_id = new_resources.id
+      self.save
+
+      # Generate starting resources
+      new_resources.update_attributes(
+        :cash => 15000000,
+        :materials => 5000,
+        :food => 2500
+      )
+      new_resources.save
     end
 
 end

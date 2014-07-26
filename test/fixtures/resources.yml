@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cash: 1
+  materials: 1
+  food: 1
+
+two:
+  cash: 1
+  materials: 1
+  food: 1

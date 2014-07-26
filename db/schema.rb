@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725233818) do
+ActiveRecord::Schema.define(version: 20140726034153) do
 
   create_table "cities", force: true do |t|
     t.integer  "land_id"
+    t.integer  "resources_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -26,6 +27,14 @@ ActiveRecord::Schema.define(version: 20140725233818) do
     t.integer  "agriculture", default: 0
     t.integer  "mines",       default: 0
     t.integer  "industry",    default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "resources", force: true do |t|
+    t.integer  "cash",       default: 0
+    t.integer  "materials",  default: 0
+    t.integer  "food",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
