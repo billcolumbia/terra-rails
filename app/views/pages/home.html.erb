@@ -1,0 +1,11 @@
+<h1>Cities</h1>
+<% @cities.each do |city| %>
+  <div class="city">
+    <h3>ID: <%= city.id %></h3>
+    <h3>Name: <%= city.name %></h3>
+    <h3>Size: <%= city.land.size %></h3>
+  </div>
+<% end %>
+
+<hr>
+
